@@ -1,5 +1,13 @@
 # threat-intel-mockups
 
+Mockups for Upwork Project.
+
+by Reed Jones 
+ 
+ 
+Mood boards (same as below) on canva: https://cyberdemoreed.my.canva.site/
+
+Design white-board: https://www.figma.com/file/eixnwFNQNNePpFGObyHf49/cyber-security-design-brainstorm?type=whiteboard&node-id=0%3A1&t=9IIJJm2BS39L226I-1
 
 
 ![Home](https://github.com/reedjones/threat-intel-mockups/assets/4346136/d113117c-5ab5-42b3-840e-ee51661eb681)
