@@ -1,0 +1,87 @@
+openapi: 3.0.3
+info:
+  description: API for managing cyber threat intelligence data.
+  title: Cyber Security Threat Intelligence API
+  version: 1.0.0
+servers:
+- url: /
+paths:
+  /assets:
+    get:
+      operationId: assets_get
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+              - ID: ASSET001
+                Name: Server-01
+              - ID: ASSET002
+                Name: Workstation-03
+          description: Successful response
+      summary: Get a list of all Assets
+      x-openapi-router-controller: openapi_server.controllers.default_controller
+  /incidents:
+    get:
+      operationId: incidents_get
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+              - ID: INC123
+                Title: Data Breach in Government Agency
+              - ID: INC456
+                Title: Phishing Attack on Corporation XYZ
+          description: Successful response
+      summary: Get a list of all Incidents
+      x-openapi-router-controller: openapi_server.controllers.default_controller
+  /indicators-of-compromise:
+    get:
+      operationId: indicators_of_compromise_get
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+              - ID: IOC789
+                Type: IP Address
+                Value: 192.168.1.100
+              - ID: IOC101
+                Type: File Hash
+                Value: 3a2b1c4d5e6f
+          description: Successful response
+      summary: Get a list of all Indicators of Compromise (IoCs)
+      x-openapi-router-controller: openapi_server.controllers.default_controller
+  /threat-actors:
+    get:
+      operationId: threat_actors_get
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+              - ID: TA123
+                Name: Advanced Persistent Threat Group A
+              - ID: TA456
+                Name: Hacktivist Group XYZ
+          description: Successful response
+      summary: Get a list of all Threat Actors
+      x-openapi-router-controller: openapi_server.controllers.default_controller
+  /vulnerabilities:
+    get:
+      operationId: vulnerabilities_get
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+              - ID: VUL101
+                CVEID: CVE-2023-1234
+              - ID: VUL202
+                CVEID: CVE-2023-5678
+          description: Successful response
+      summary: Get a list of all Vulnerabilities
+      x-openapi-router-controller: openapi_server.controllers.default_controller
+components:
+  schemas: {}

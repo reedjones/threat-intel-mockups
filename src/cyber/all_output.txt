@@ -1,0 +1,210 @@
+iocElement.js
+```javascript
+class IoCElement extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+    }
+
+    connectedCallback() {
+        this.render();
+    }
+
+    render() {
+        this.shadowRoot.innerHTML = `
+            <li>
+                <h2>${this.getAttribute('type')}</h2>
+                <p>${this.getAttribute('description')}</p>
+                <p>Value: ${this.getAttribute('value')}</p>
+                <p>Associated Threat Actors: ${this.getAttribute('associatedThreatActors')}</p>
+            </li>
+        `;
+    }
+}
+
+customElements.define('ioc-element', IoCElement);
+```
+
+iocCollectionElement.js
+```javascript
+class IoCCollectionElement extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+    }
+
+    connectedCallback() {
+        this.render();
+    }
+
+    render() {
+        this.shadowRoot.innerHTML = `
+            <h2>Indicators of Compromise</h2>
+            <ul>
+                <ioc-element type="IP Address" description="Suspicious IP address observed in network traffic" value="192.168.1.100" associatedThreatActors="TA123"></ioc-element>
+            </ul>
+        `;
+    }
+}
+
+customElements.define('ioc-collection-element', IoCCollectionElement);
+```
+
+incidentElement.js
+```javascript
+class IncidentElement extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+    }
+
+    connectedCallback() {
+        this.render();
+    }
+
+    render() {
+        this.shadowRoot.innerHTML = `
+            <li>
+                <h2>${this.getAttribute('title')}</h2>
+                <p>${this.getAttribute('description')}</p>
+                <p>Severity: ${this.getAttribute('severity')}</p>
+                <p>Date/Time: ${this.getAttribute('dateTime')}</p>
+                <p>Associated IoCs: ${this.getAttribute('associatedIoCs')}</p>
+                <p>Affected Systems: ${this.getAttribute('affectedSystems')}</p>
+            </li>
+        `;
+    }
+}
+
+customElements.define('incident-element', IncidentElement);
+```
+
+incidentCollectionElement.js
+```javascript
+class IncidentCollectionElement extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+    }
+
+    connectedCallback() {
+        this.render();
+    }
+
+    render() {
+        this.shadowRoot.innerHTML = `
+            <h2>Incidents</h2>
+            <ul>
+                <incident-element title="Data Breach in Government Agency" description="Sensitive government data leaked to the dark web." severity="High" dateTime="2023-10-04T14:30:00Z" associatedIoCs="IOC456" affectedSystems="Server-01, Workstation-03"></incident-element>
+            </ul>
+        `;
+    }
+}
+
+customElements.define('incident-collection-element', IncidentCollectionElement);
+```
+
+vulnerabilityElement.js
+```javascript
+class VulnerabilityElement extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+    }
+
+    connectedCallback() {
+        this.render();
+    }
+
+    render() {
+        this.shadowRoot.innerHTML = `
+            <li>
+                <h2>${this.getAttribute('cveid')}</h2>
+                <p>${this.getAttribute('description')}</p>
+                <p>Affected Software: ${this.getAttribute('affectedSoftware')}</p>
+                <p>Severity: ${this.getAttribute('severity')}</p>
+                <p>Patch Status: ${this.getAttribute('patchStatus')}</p>
+            </li>
+        `;
+    }
+}
+
+customElements.define('vulnerability-element', VulnerabilityElement);
+```
+
+vulnerabilityCollectionElement.js
+```javascript
+class VulnerabilityCollectionElement extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+    }
+
+    connectedCallback() {
+        this.render();
+    }
+
+    render() {
+        this.shadowRoot.innerHTML = `
+            <h2>Vulnerabilities</h2>
+            <ul>
+                <vulnerability-element cveid="CVE-2023-1234" description="Critical remote code execution vulnerability" affectedSoftware="Web Application XYZ v2.0" severity="Critical" patchStatus="Not patched"></vulnerability-element>
+            </ul>
+        `;
+    }
+}
+
+customElements.define('vulnerability-collection-element', VulnerabilityCollectionElement);
+```
+
+assetElement.js
+```javascript
+class AssetElement extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+    }
+
+    connectedCallback() {
+        this.render();
+    }
+
+    render() {
+        this.shadowRoot.innerHTML = `
+            <li>
+                <h2>${this.getAttribute('name')}</h2>
+                <p>${this.getAttribute('description')}</p>
+                <p>Type: ${this.getAttribute('type')}</p>
+                <p>Criticality Level: ${this.getAttribute('criticalityLevel')}</p>
+            </li>
+        `;
+    }
+}
+
+customElements.define('asset-element', AssetElement);
+```
+
+assetCollectionElement.js
+```javascript
+class AssetCollectionElement extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+    }
+
+    connectedCallback() {
+        this.render();
+    }
+
+    render() {
+        this.shadowRoot.innerHTML = `
+            <h2>Assets</h2>
+            <ul>
+                <asset-element name="Server-01" description="Web server hosting critical applications" type="Server" criticalityLevel="High"></asset-element>
+            </ul>
+        `;
+    }
+}
+
+customElements.define('asset-collection-element', AssetCollectionElement);
+```

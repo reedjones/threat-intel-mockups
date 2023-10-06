@@ -1,0 +1,26 @@
+@import "https://unpkg.com/open-props";
+/*!* optional imports that use the props *!*/
+@import "https://unpkg.com/open-props/normalize.min.css";
+/*@import "https://unpkg.com/open-props/buttons.min.css";*/
+@import "https://unpkg.com/open-props/animations.min.css";
+
+@import "ag-grid-community/styles/ag-grid.css";
+@import "ag-grid-community/styles/ag-theme-alpine.css";
+
+
+@import "@spectrum-css/button/dist/index-vars.css";
+@import "@spectrum-css/vars/dist/spectrum-dark.css";
+@import "@spectrum-css/vars/dist/spectrum-light.css";
+@import "@spectrum-css/page/dist/index-vars.css";
+@import "@spectrum-css/button/dist/index-vars.css";
+@import "@spectrum-css/vars/css/components/index.css";
+@import "@spectrum-css/vars/dist/spectrum-global.css";
+
+@import "@spectrum-css/tokens/dist/index.css";
+
+
+
+@import "@spectrum-css/typography/dist/index-vars.css";
+
+@import "@spectrum-css/icon/dist/index-vars.css";
+
